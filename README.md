@@ -17,11 +17,11 @@ Raspberry Pi can be attached via usb for the purpose of data logging. This is as
   https://roboticsbackend.com/raspberry-pi-arduino-serial-communication/
   
   ## Database
-    ### credentials and logging in
-    ### making a table, granting permissions
-    ### writing to table
-    ### pulling out of table (cursor usage)
-    ### plotting data
+  ### credentials and logging in
+  ### making a table, granting permissions
+  ### writing to table
+  ### pulling out of table (cursor usage)
+  ### plotting data
   
 # Hardware Notes
   ## Fans 
