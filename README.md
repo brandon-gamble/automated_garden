@@ -7,9 +7,24 @@ Raspberry Pi can be attached via usb for the purpose of data logging. This is as
 
 # Arduino
   ## 'timed_switch' class
+  The timed_switch class utilizes passive delay logic via the `millis()` function. This allows multiple timers to be made and packaged neatly as objects in the main Arduino code. All the hardwork is hidden in the switch class. The "switch" is a hi/lo signal on a digital pin. This can be wired to a MOSFET or a relay to control external devices.
   ## Lights
+  The lights are run with a modified switch class that accepts a PWM value as an argument. The digital pin out from the switch is hooked up to a MOSFET for switching the lights on and off.
   ## Airflow
+  The CPU style fans I selected run at 12V, ~0.2A. There are three that are powered in parallel. The digital pin out from the switch toggles a relay. 
   ## Humidity
+  ### Homemade humidifier V1 - timer (UNSUCCESSFUL)
+  Using an ultrasonic mist module, a CPU fan, and some tubing, a humidifier was constructed. 
+  Notably, the software to control it worked great, but the mister was not able to generate enough volume of mist to keep the environment at a sufficient humidity. 
+  
+  Again, a modified switch class was made with two nested switches. The parent timer toggled the mister, while the child timer toggled the fan on and off within the on period of the mister. The reason for the sub-switch on the fan was to allow the mister to build up mist in the box during a "charge" period and then have the fan distribute the mist during a short "blow" period. This proved to be more effective at distributing mist than having the fan continuously on with the mister.
+  
+  ### Homemade humidifier V2 - hysteresis (UNSUCCESSFUL)
+  The same humidifier set up was used but instead of the charge/blow cycle of distributing mist being on a timed schedule, it was toggled on and off using a DHT22 sensor and hysteresis. This worked better than the strictly timer based humidificaiton, but again the homemade humidifer simply could not output enough water vapor to keep the environment at sufficient humidity.
+  
+  As such, I broke and bought a cool-mist humidifier and enabled it with hysteresis and a humiditiy sensor. 
+  
+  ### Cool-mist humidifier
 
 # Raspberry Pi
   ## pySerial
