@@ -73,6 +73,9 @@ Raspberry Pi can be attached via usb for the purpose of data logging. This is as
   ```
   More complicated methods can be found [in this blog post](https://roboticsbackend.com/raspberry-pi-arduino-serial-communication/), including bi-directional communication.
   This [Maker Portal post](https://makersportal.com/blog/2018/2/25/python-datalogger-reading-the-serial-output-from-arduino-to-analyze-data-using-pyserial) shows how to make a live updating graph with `Matplotlib`.
+  ## continuous ssh session with screen!
+  https://raspi.tv/2012/using-screen-with-raspberry-pi-to-avoid-leaving-ssh-sessions-open
+  
   
   ## Database
   ### credentials and logging in
