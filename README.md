@@ -76,6 +76,18 @@ Raspberry Pi can be attached via usb for the purpose of data logging. This is as
   ## continuous ssh session with screen!
   https://raspi.tv/2012/using-screen-with-raspberry-pi-to-avoid-leaving-ssh-sessions-open
   
+  Useful commands:
+  
+  | Command                | Description           |
+  | :--------------------- | :-------------------- |
+  | `screen -s _name_`     | Start a named screen  |
+  | <kbd>Ctrl</kbd> + <kbd>A</kbd>, <kbd>D</kbd> | Detach from current screen |
+  | `screen -ls`           | List screen sessions  |
+  | `screen -r _name_`     | Reconnect to `_name_` |
+  | `ECHO $STY`            | Echo current screen name (if in a screen) |
+  
+  
+  
   
   ## Database
   ### credentials and logging in
