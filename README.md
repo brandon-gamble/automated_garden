@@ -84,8 +84,10 @@ Raspberry Pi can be attached via usb for the purpose of data logging. This is as
   | <kbd>Ctrl</kbd> + <kbd>A</kbd>, <kbd>D</kbd> | Detach from current screen |
   | `screen -ls`           | List screen sessions  |
   | `screen -r `_`name`_     | Reconnect to _`name`_|
+  | `screen -r -d`_`name`_ | Detach and reconnet to _`name`_. *** |
   | `ECHO $STY`            | Echo current screen name (if in a screen) |
   
+  *** Useful when screen is still attached but you've lost the terminal to which it is attached
   
   
   
