@@ -25,6 +25,11 @@ Raspberry Pi can be attached via usb for the purpose of data logging. This is as
   As such, I broke and bought a cool-mist humidifier and enabled it with hysteresis and a humiditiy sensor. 
   
   ### Cool-mist humidifier
+  The cool-mist humidifier was attached to a relay which was controlled by a switch class with a hysteresis schedule. This proved to be a very effective way to control the humidity of the envrionment. 
+  
+  One thing I noticed is that occasionally the humidifier would get "stuck" on and run continuously for hours until it was out of water. Ironically, this would occur when one of the DHT sensors became saturated and rather than read 100% humidity, it would read NaN. As a result, the hysteresis switch would not register that the humidity was above the high threshold. 
+  
+  To address this, I added a heuristic to the sensor array. Rather than simply averaging the three sensors values, a filter was applied to ignore any sensors giving NaN. The remaining sensors values were then averaged and this humidity value was passed to the hysteresis switch.
 
 # Raspberry Pi
   ## pySerial
